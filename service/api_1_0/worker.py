@@ -70,6 +70,7 @@ def updateWorker(user, id, **kwargs):
     if type(confdict) != dict:
       raise ValueError("configdata value(dict expected): %s" % confdict)
     worker.configdata.data = confdict
+    confdata = worker.configdata
     if baseconfig_changed:
       confdata.inherits = worker.baseconfig.configdata \
                           if worker.baseconfig != None else None
